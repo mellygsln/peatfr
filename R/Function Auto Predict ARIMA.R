@@ -1,9 +1,4 @@
 autopredictarima <- function(WT, SM, Rf, Temp, h) {
-    if (!requireNamespace("forecast", quietly = TRUE)) {
-    install.packages("forecast")
-  }
-  library(forecast)
-
   data_combined <- data.frame(WT, SM, Rf, Temp)
   columns <- c("WT", "SM", "Rf", "Temp")
   models <- list()
