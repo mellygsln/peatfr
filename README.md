@@ -22,7 +22,9 @@ Peat Burn Forecast consists of several functions that assist in predicting peatl
 
 Install the dependencies using:
 ```bash
-pip install -r requirements.txt
+devtools::install_github("mellygsln/autopeatburnforecast")
+
+library(peatburnforecast)
 ```
 
 ## Project Structure
