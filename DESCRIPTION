@@ -8,4 +8,4 @@ Description: Peat Burn Forecast consists of several functions that assist in pre
 License: MIT
 Encoding: UTF-8
 LazyData: true
-Imports: forecast
+Imports:
