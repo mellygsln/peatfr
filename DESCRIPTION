@@ -1,0 +1,11 @@
+Package: peatburnforecast
+Type: Package
+Title: Prediction for Fire on the PeatLand
+Version: 0.0.1
+Author: Melly
+Maintainer: The package maintainer <guslainimelly@gmail.com> or https://github.com/mellygsln/autopeatburnforecast/issues
+Description: Peat Burn Forecast consists of several functions that assist in predicting peatland fires with a single click using the `autoPeatBurnForecast()` function. Alternatively, users can perform the prediction step by step, allowing for analysis at each stage. The prediction process involves forecasting four key variables—water table, soil moisture, rainfall, and temperature—using ARIMA and Box-Cox transformation. Subsequently, Nelder-Mead optimization is applied to determine the Peat Fire Vulnerability Index (PFVI).
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: 
