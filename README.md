@@ -43,7 +43,7 @@ peatburnforecast/
 |-- .Rhistory                        
 |-- DESCRIPTION
 |-- NAMESPACE
-|-- peatburnforecast
+|-- peatburnforecast.Rproj
 ```
 
 
