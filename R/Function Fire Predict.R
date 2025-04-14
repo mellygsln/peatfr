@@ -1,5 +1,9 @@
-firepredict <- function(WT, SM, Rf, Temp, R0 = 3000, dt = 1) {
-
+firepredict <- function(WT, SM, Rf, Temp, R0 = 3000, dt = 1, h) {
+  if (!requireNamespace("ggplot2", quietly = TRUE)) {
+    install.packages("ggplot2")
+  }
+  library(ggplot2)
+  
   DF <- function(nPFVI, Temp, R0, dt) {
     return((300 - nPFVI) * (0.4982 * exp(0.0905 * Temp + 1.6096) - 4.268) * dt * 10^(-3) / (1 + 10.88 * exp(-0.00173582677165354 * R0)))
   }
@@ -94,5 +98,47 @@ firepredict <- function(WT, SM, Rf, Temp, R0 = 3000, dt = 1) {
   result_PFVI <- pmax(pmin(result_PFVI, 300), 0)
   result_DIobs <- pmax(pmin(result_DIobs, 300), 0)
 
-  return(list(PFVI = result_PFVI, DIobs = result_DIobs, TransformationParameters = final_params))
+  if (length(result_PFVI) != length(result_DIobs)) {
+    stop("The lengths of PFVI and DIobs must be the same.")
+  }
+
+  Time <- seq_along(result_PFVI)
+  df_plot <- data.frame(
+    Time = Time,
+    PFVI = result_PFVI,
+    DIobs = result_DIobs
+  )
+
+  df_plot_line <- df_plot[1:(length(Time) - h), ]
+  df_plot_dot <- df_plot[(length(Time) - h + 1):length(Time), ]
+
+  p <- ggplot() +
+    geom_line(data = df_plot_line, aes(x = Time, y = PFVI, color = "PFVI"), linetype = "dashed", linewidth = 1) +
+    geom_point(data = df_plot_dot, aes(x = Time, y = PFVI, color = "PFVI Predict"), size = 2) +
+    geom_line(data = df_plot_line, aes(x = Time, y = DIobs, color = "DIobs"), linetype = "dashed", linewidth = 1) +
+    labs(
+      x = "Time",
+      y = "Value",
+      title = "PFVI and DIobs Plot"
+    ) +
+    scale_color_manual(values = c(
+      "PFVI" = "blue",
+      "PFVI Predict" = "darkblue",
+      "DIobs" = "red"
+    )) +
+    ylim(-100, 400) +
+    theme_minimal() +
+    theme(
+      legend.title = element_blank(),
+      legend.text = element_text(size = 12),
+      axis.text.x = element_text(size = 14),
+      axis.text.y = element_text(size = 14)
+    )
+
+  print(p)
+
+  return(list(PFVI = result_PFVI,
+              DIobs = result_DIobs,
+              TransformationParameters = final_params,
+              plot = p))
 }
