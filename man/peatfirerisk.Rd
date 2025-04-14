@@ -1,18 +1,17 @@
-\name{PeatBurnForecast}
-\alias{PeatBurnForecast}
+\name{PeatFireRisk}
+\alias{PeatFireRisk}
 \title{Prediction for Fire on the PeatLand}
 \description{
-Peat Burn Forecast consists of several functions that assist in predicting peatland fires with a single click using the autopeatburnforecast() function. Alternatively, users can perform the prediction step by step, allowing for analysis at each stage. The prediction process involves forecasting four key variables—water table, soil moisture, rainfall, and temperature—using ARIMA and Box-Cox transformation. Subsequently, Nelder-Mead optimization is applied to determine the Peat Fire Vulnerability Index (PFVI).
+Peat Fire Risk consists of several functions that assist in predicting peatland fires with a single click using the autopeatfr() function. Alternatively, users can perform the prediction step by step, allowing for analysis at each stage. The prediction process involves forecasting four key variables—water table, soil moisture, rainfall, and temperature—using ARIMA and Box-Cox transformation. Subsequently, Nelder-Mead optimization is applied to determine the Peat Fire Vulnerability Index (PFVI).
 }
 \usage{
-  autopeatburnforecast(WT, SM, Rf, Temp, imputation = c("knn", "spline", "linear", "loess"), h = 4, R0 = 3000, dt = 1)
+  autopeatfr(WT, SM, Rf, Temp, imputation = c("knn", "spline", "linear", "loess"), h = 4, R0 = 3000, dt = 1)
   knn_imputation(WT, SM, Rf, Temp, k = 5)
   spline_interpolation(WT, SM, Rf, Temp)
   loess_interpolation(WT, SM, Rf, Temp, span = 0.5)
   linear_interpolation(WT, SM, Rf, Temp)
   autopredictarima(WT, SM, Rf, Temp, h)
   firepredict(WT, SM, Rf, Temp, R0 = 3000, dt = 1)
-  plotpfvi(PFVI, h)
 }
 \arguments{
   \item{WT}{A numeric vector representing the water tables.}
@@ -55,6 +54,6 @@ SM <- c(35.424, NA, 37.268, 38.453, 31.456, 33.235, 30.168, 30.212)
 Rf <- c(0.00012, 0.00024, 0.00011, NA, NA, 0.00046, 0.00052, 0.00041)
 Temp <- c(35.4, 35.8, NA, 36.5, 36.3, 37.2, 37.0, 38.1)
 
-autopeatburnforecast(WT, SM, Rf, Temp, imputation = "knn", h = 4, R0 = 2700, dt = 1)
+autopeatfr(WT, SM, Rf, Temp, imputation = "knn", h = 4, R0 = 2700, dt = 1)
 }
-\keyword{prediction, peatland, burn}
+\keyword{risk, peatland, burn}
