@@ -44,7 +44,7 @@ peatfr/
 |-- .Rhistory                        
 |-- DESCRIPTION
 |-- NAMESPACE
-|-- peatbfirerisk.Rproj
+|-- peatfirerisk.Rproj
 ```
 
 
