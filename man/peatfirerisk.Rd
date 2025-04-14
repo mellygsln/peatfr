@@ -1,6 +1,6 @@
 \name{PeatFireRisk}
 \alias{PeatFireRisk}
-\title{Prediction for Fire on the PeatLand}
+\title{Risk for Fire on the PeatLand}
 \description{
 Peat Fire Risk consists of several functions that assist in predicting peatland fires with a single click using the autopeatfr() function. Alternatively, users can perform the prediction step by step, allowing for analysis at each stage. The prediction process involves forecasting four key variables—water table, soil moisture, rainfall, and temperature—using ARIMA and Box-Cox transformation. Subsequently, Nelder-Mead optimization is applied to determine the Peat Fire Vulnerability Index (PFVI).
 }
