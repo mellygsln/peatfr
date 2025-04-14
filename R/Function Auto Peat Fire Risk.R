@@ -1,4 +1,4 @@
-autopeatburnforecast <- function(WT, SM, Rf, Temp, imputation = c("knn", "spline", "linear", "loess"), h = 4, R0 = 3000, dt = 1) {
+autopeatfr <- function(WT, SM, Rf, Temp, imputation = c("knn", "spline", "linear", "loess"), h = 4, R0 = 3000, dt = 1) {
   if (!requireNamespace("ggplot2", quietly = TRUE)) {
     install.packages("ggplot2")
   }
@@ -87,7 +87,8 @@ autopeatburnforecast <- function(WT, SM, Rf, Temp, imputation = c("knn", "spline
     Rf = Rf_full,
     Temp = Temp_full,
     R0 = R0,
-    dt = dt)
+    dt = dt,
+    h = h)
 
   PFVI <- PFVI_results$PFVI
   last_PFVI <- tail(PFVI, h)
@@ -105,6 +106,5 @@ autopeatburnforecast <- function(WT, SM, Rf, Temp, imputation = c("knn", "spline
   for (i in 1:h) {
     cat(sprintf("PFVI-%d: %f (%s)\n", length(PFVI) - h + i, last_PFVI[i], PFVI_labels[i]))}
 
-  DIobs <- PFVI_results$DIobs
-  plotpfvi(PFVI, h)
+  PFVI_results$plot
 }
