@@ -1,10 +1,10 @@
-Package: peatburnforecast
+Package: peatfr
 Type: Package
-Title: Prediction for Fire on the PeatLand
+Title: Risk for Fire on the PeatLand
 Version: 0.0.1
 Author: Melly
 Maintainer: The package maintainer <guslainimelly@gmail.com>
-Description: The peatburnforecast package provide comprehensive framework to forecast tropical peatland fire through stochastics and optimisation  methods. The peatburnforecast consists of three main functions, including, data imputation process, time series forecasting, and drought fire index calculation. This package provides four imputation process, which can be employed to estimate the missing values of time series data of water table, soil moisture, rainfall, and air temperature. The forecasting process employs ARIMA stochastics model combined with Box-Cox transformation. The drought fire index is calculated through Peat Fire Vulnerability Index with Nelder-Mead optimisation to obtain the best parameters automatically.    
+Description: The peatfr package provide comprehensive framework to forecast tropical peatland fire through stochastics and optimisation  methods. The peatfr consists of three main functions, including, data imputation process, time series forecasting, and drought fire index calculation. This package provides four imputation process, which can be employed to estimate the missing values of time series data of water table, soil moisture, rainfall, and air temperature. The forecasting process employs ARIMA stochastics model combined with Box-Cox transformation. The drought fire index is calculated through Peat Fire Vulnerability Index with Nelder-Mead optimisation to obtain the best parameters automatically.    
 License: MIT
 Encoding: UTF-8
 LazyData: true
