@@ -34,7 +34,7 @@ peatfr/
     |-- peatfirerisk.Rd/
 |-- R                
     |-- Function Auto Peat Fire Risk/
-    |-- Function Auto Predict ARIMS/
+    |-- Function Auto Predict ARIMA/
     |-- Function Fire Predict/
     |-- Function KNN/
     |-- Function Linear/
