@@ -130,7 +130,9 @@ firepredict <- function(WT, SM, Rf, Temp, R0 = 3000, dt = 1, h) {
       legend.title = element_blank(),
       legend.text = element_text(size = 12),
       axis.text.x = element_text(size = 14),
-      axis.text.y = element_text(size = 14)
+      axis.text.y = element_text(size = 14),
+      panel.grid = element_blank(),
+      panel.border = element_rect(color = "black", fill = NA, linewidth = 1)
     )
 
   print(p)
