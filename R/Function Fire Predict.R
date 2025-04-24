@@ -115,16 +115,14 @@ firepredict <- function(WT, SM, Rf, Temp, R0 = 3000, dt = 1, h) {
   p <- ggplot() +
     geom_line(data = df_plot_line, aes(x = Time, y = PFVI, color = "PFVI"), linetype = "dashed", linewidth = 1) +
     geom_point(data = df_plot_dot, aes(x = Time, y = PFVI, color = "PFVI Predict"), size = 2) +
-    geom_line(data = df_plot_line, aes(x = Time, y = DIobs, color = "DIobs"), linetype = "dashed", linewidth = 1) +
     labs(
       x = "Time",
-      y = "Value",
-      title = "PFVI and DIobs Plot"
+      y = "PFVI (-)",
+      title = "PFVI and PFVI Predict Plot"
     ) +
     scale_color_manual(values = c(
       "PFVI" = "blue",
-      "PFVI Predict" = "darkblue",
-      "DIobs" = "red"
+      "PFVI Predict" = "red",
     )) +
     ylim(-100, 400) +
     theme_minimal() +
