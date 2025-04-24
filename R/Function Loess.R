@@ -47,11 +47,11 @@ loess_interpolation <- function(WT, SM, Rf, Temp, span = 0.5) {
     y_max <- max(c(original_values, imputed_values), na.rm = TRUE)
 
     unit <- c("(meter)", "(%)", "(milimeter)", "(ºC)")
-    plot(original_values, type = "p", col = "blue", pch = 16, main = paste("LOESS Interpolation -", col_name, unit[i]),
+    plot(original_values, type = "l", col = "blue", pch = 16, main = paste("LOESS Interpolation -", name[i], unit[i]),
          xlab = "Time", ylab = name[i], ylim = c(y_min, y_max), cex.main = 0.9)
     points(missing_indices, imputed_values[missing_indices], col = "red", pch = 16)
     legend(x = "bottomleft", inset = c(0, -0.3), legend = c("Original", "Interpolated"),
-           col = c("blue", "red"), pch = 16, bty = "n", xpd = TRUE)
+           col = c("blue", "red"), lty = c(1, NA), pch = c(NA, 16), lwd = c(2, NA), pt.cex = c(NA, 1.5), bty = "n", xpd = TRUE)
     i <- i+1
   }
 
