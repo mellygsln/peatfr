@@ -10,7 +10,7 @@ The peat fire risk package or peatfr package provide comprehensive framework to 
 - loess_interpolation(WT, SM, Rf, Temp, span = 0.5)
 - linear_interpolation(WT, SM, Rf, Temp)
 - autopredictarima(WT, SM, Rf, Temp, h)
-- firepredict(WT, SM, Rf, Temp, R0 = 3000, dt = 1, h = h)
+- firepredict(WT, SM, Rf, Temp, R0 = 3000, dt = 1, h)
 
 ## Getting Started
 ### Prerequisites
