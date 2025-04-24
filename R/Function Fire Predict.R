@@ -122,7 +122,7 @@ firepredict <- function(WT, SM, Rf, Temp, R0 = 3000, dt = 1, h) {
     ) +
     scale_color_manual(values = c(
       "PFVI" = "blue",
-      "PFVI Predict" = "red",
+      "PFVI Predict" = "red"
     )) +
     ylim(-100, 400) +
     theme_minimal() +
