@@ -32,7 +32,7 @@ knn_imputation <- function(WT, SM, Rf, Temp, k = 5) {
     y_max <- max(c(original_values, imputed_values), na.rm = TRUE)
 
     unit <- c("(meter)", "(%)", "(milimeter)", "(ºC)")
-    plot(original_values, type = "l", col = "blue", pch = 16, main = paste("kNN Imputation -", name[i], unit[i]),
+    plot(original_values, type = "l", col = "blue", pch = 16, main = paste("kNN Imputation -", name[i]),
          xlab = "Time", ylab = name[i], ylim = c(y_min, y_max), cex.main = 0.9, cex.lab = 1.2, cex.axis = 1.2)
     points(missing_indices, imputed_values[missing_indices], col = "red", pch = 16)
     legend(x = "bottomleft", inset = c(0, -0.45), legend = c("Original", "Imputed"),
