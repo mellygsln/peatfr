@@ -67,10 +67,12 @@ autopredictarima <- function(WT, SM, Rf, Temp, h) {
          ylab = name[i],
          xlim = c(1, length(original_data) + length(forecasted_data)),
          ylim = c(ymin, ymax))
-    lines(seq(length(original_data) + 1, length(original_data) + length(forecasted_data)),
+    points(seq(length(original_data) + 1, length(original_data) + length(forecasted_data)),
           forecasted_data, col = "red", lwd = 2)
     legend("bottomleft", legend = c("Original Data", "Forecasted Data"),
            col = c("blue", "red"), lwd = 2, bty = "n", cex = 0.8, inset = c(0, -0.3), xpd = TRUE)
+    legend(x = "bottomleft", inset = c(0, -0.3), legend = c("Original Data", "Forecasted Data"),
+           col = c("blue", "red"), pch = 16, bty = "n", xpd = TRUE)
 
     total_length <- length(original_data) + length(forecasted_data)
     last_25_original <- rep(NA, total_length)
@@ -84,8 +86,8 @@ autopredictarima <- function(WT, SM, Rf, Temp, h) {
          xlim = c((total_length - 24), total_length),
          ylim = c(zoom_ymin, zoom_ymax))
     points(seq(length(original_data) + 1, total_length), forecasted_data, col = "red", lwd = 2)
-    legend("bottomleft", legend = c("Original Data", "Forecasted Data"),
-           col = c("blue", "red"), lwd = 2, bty = "n", cex = 0.8, inset = c(0, -0.3), xpd = TRUE)
+    legend(x = "bottomleft", inset = c(0, -0.45), legend = c("Original Data", "Forecasted Data"),
+           col = c("blue", "red"), lty = c(1, NA), pch = c(NA, 16), lwd = c(2, NA), pt.cex = c(NA, 1.5), bty = "n", xpd = TRUE)
     i <- i + 1
   }
 
