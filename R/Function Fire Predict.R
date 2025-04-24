@@ -113,7 +113,7 @@ firepredict <- function(WT, SM, Rf, Temp, R0 = 3000, dt = 1, h) {
   df_plot_dot <- df_plot[(length(Time) - h + 1):length(Time), ]
 
   p <- ggplot() +
-    geom_line(data = df_plot_line, aes(x = Time, y = PFVI, color = "PFVI"), linetype = "dashed", linewidth = 1) +
+    geom_line(data = df_plot_line, aes(x = Time, y = PFVI, color = "PFVI"), linewidth = 1) +
     geom_point(data = df_plot_dot, aes(x = Time, y = PFVI, color = "PFVI Predict"), size = 2) +
     labs(
       x = "Time",
